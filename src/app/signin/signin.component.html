@@ -1,0 +1,16 @@
+  <form align="center" #formRef='ngForm' (ngSubmit)='onSubmit(formRef.value)'>
+    <div class="container">
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" #usernameRef='ngModel' name="username" required ngModel><br>
+  
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" #passwordRef='ngModel' name="password" required ngModel>
+  <br>
+        <pre>          <input type="submit" value='SignIn'></pre>
+     
+    </div>
+  
+    
+  </form>
+
+

@@ -1,0 +1,42 @@
+  <html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div *ngIf="update" >
+    <input type="text" name="name" [(ngModel)]=datatobeedited.name >
+    <input type="text" name="email" [(ngModel)]=datatobeedited.email ngModel>
+    
+    <button (click)='saveUpdate(datatobeedited)' type="button" class="btn btn-sm btn-info">save</button>
+  </div>
+
+
+
+
+<br>
+  <br>
+  <table class="table" bgcolor="#9932CC">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let i of test; let in=index'  class="success">
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td><button (click)='deleteData(i.name,in)' type="button" class="btn btn-large btn-danger">Delete</button>
+        <!-- <button type="submit" (click)='editData(i,in)'>Edit</button> -->
+        <button (click)='editData(i,in)' type="button" class="btn btn-large btn-info">Edit</button>
+ 
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
